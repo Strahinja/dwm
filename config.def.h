@@ -57,17 +57,16 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 static const int decorhints  = 1;    /* 1 means respect decoration hints */
 
 #include "layouts.c"
-static const Layout layouts[] =
-{
-    /* symbol     arrange function */
-    { "TTT",      bstack },
-    { "[]=",      tile },    /* first entry is default */
-    { "><>",      NULL },    /* no layout function means floating behavior */
-    { "[M]",      monocle },
-    //{ "===",      bstackhoriz },
-    { "HHH",      grid },
-    { "|M|",      centeredmaster },
-    { ">M>",      centeredfloatingmaster },
+static const Layout layouts[] = {
+	/* symbol	 arrange function */
+	{ "TTT",	  bstack },
+	{ "[]=",	  tile },	/* first entry is default */
+	{ "><>",	  NULL },	/* no layout function means floating behavior */
+	{ "[M]",	  monocle },
+	//{ "===",	  bstackhoriz },
+	{ "HHH",	  grid },
+	{ "|M|",	  centeredmaster },
+	{ ">M>",	  centeredfloatingmaster },
 };
 
 /* key definitions */
@@ -103,6 +102,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[3]} },
+	{ MODKEY,                       XK_o,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
