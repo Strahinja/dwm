@@ -58,15 +58,14 @@ static const int decorhints  = 1;    /* 1 means respect decoration hints */
 
 #include "layouts.c"
 static const Layout layouts[] = {
-	/* symbol	 arrange function */
-	{ "TTT",	  bstack },
-	{ "[]=",	  tile },	/* first entry is default */
-	{ "><>",	  NULL },	/* no layout function means floating behavior */
-	{ "[M]",	  monocle },
-	//{ "===",	  bstackhoriz },
-	{ "HHH",	  grid },
-	{ "|M|",	  centeredmaster },
-	{ ">M>",	  centeredfloatingmaster },
+	/* symbol     arrange function */
+	{ "[]=",      tile },    /* first entry is default */
+	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "[M]",      monocle },
+	{ "TTT",      bstack },
+	{ "===",      bstackhoriz },
+	{ "|M|",      centeredmaster },
+	{ ">M>",      centeredfloatingmaster },
 };
 
 /* key definitions */
@@ -104,6 +103,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_o,      setlayout,      {.v = &layouts[4]} },
+	{ MODKEY|ControlMask,           XK_u,      setlayout,      {.v = &layouts[5]} },
+	{ MODKEY|ControlMask,           XK_o,      setlayout,      {.v = &layouts[6]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
