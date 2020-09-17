@@ -284,8 +284,6 @@ struct NumTags {
     char limitexceeded[LENGTH(tags) > 31 ? -1 : 1];
 };
 
-<<<<<<< HEAD
-=======
 /* dwm will keep pid's of processes from autostart array and kill them at quit */
 static pid_t *autostart_pids;
 static size_t autostart_len;
@@ -314,7 +312,6 @@ autostart_exec() {
     }
 }
 
->>>>>>> Added bottomstack
 /* function implementations */
 void
 applyrules(Client *c)
