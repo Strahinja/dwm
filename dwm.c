@@ -1772,7 +1772,7 @@ tile(Monitor *m)
     else
         mw = m->ww;
     for (i = my = ty = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
-       if (i < m->nmaster) {
+        if (i < m->nmaster) {
             h = (m->wh - my) / (MIN(n, m->nmaster) - i);
             resize(c, m->wx, m->wy + my, mw - (2*c->bw), h - (2*c->bw), 0);
             if (my + HEIGHT(c) < m->wh)
@@ -2137,7 +2137,7 @@ updatewindowtype(Client *c)
     Atom wtype = getatomprop(c, netatom[NetWMWindowType]);
 
     if (state == netatom[NetWMFullscreen])
-        etfullscreen(c, 1);
+        setfullscreen(c, 1);
     if (wtype == netatom[NetWMWindowTypeDialog])
         c->isfloating = 1;
 }
