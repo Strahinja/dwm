@@ -1,0 +1,7 @@
+*~
+*.bak
+*.orig
+*.rej
+*.o
+dwm
+nohup.out
