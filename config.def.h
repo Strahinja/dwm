@@ -87,6 +87,7 @@ static const Layout layouts[] =
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_white, "-sb", col_green1, "-sf", col_white, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *sdmenucmd[] = { "sh", "-c", "sdmenu.sh", NULL };
 
 static Key keys[] =
 {
@@ -110,6 +111,7 @@ static Key keys[] =
     { MODKEY,                       XK_o,      setlayout,      {.v = &layouts[4]} },
     { MODKEY|ControlMask,           XK_u,      setlayout,      {.v = &layouts[5]} },
     { MODKEY|ControlMask,           XK_o,      setlayout,      {.v = &layouts[6]} },
+    { MODKEY,                       XK_g,      spawn,          {.v = sdmenucmd } },
     { MODKEY,                       XK_space,  setlayout,      {0} },
     { MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
     { MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
