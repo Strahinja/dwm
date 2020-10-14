@@ -1,13 +1,3 @@
-From f3e4acadd74cf392fdb7bf406c2edfcf5425eee8 Mon Sep 17 00:00:00 2001
-From: Michel Boaventura <michel.boaventura@protonmail.com>
-Date: Wed, 10 Jun 2020 12:50:03 -0300
-Subject: [PATCH] Implements a system tray for dwm
-
----
- config.def.h |   4 +
- dwm.c        | 403 +++++++++++++++++++++++++++++++++++++++++++++++----
- 2 files changed, 381 insertions(+), 26 deletions(-)
-
 diff --git a/config.def.h b/config.def.h
 index 1c0b587..2d824d1 100644
 --- a/config.def.h
@@ -24,7 +14,7 @@ index 1c0b587..2d824d1 100644
  static const int topbar             = 1;        /* 0 means bottom bar */
  static const char *fonts[]          = { "monospace:size=10" };
 diff --git a/dwm.c b/dwm.c
-index 9fd0286..ed42af7 100644
+index 664c527..abce13d 100644
 --- a/dwm.c
 +++ b/dwm.c
 @@ -57,12 +57,30 @@
@@ -145,8 +135,8 @@ index 9fd0286..ed42af7 100644
  			arg.ui = 1 << i;
  		} else if (ev->x < x + blw)
  			click = ClkLtSymbol;
--		else if (ev->x > selmon->ww - TEXTW(stext))
-+		else if (ev->x > selmon->ww - TEXTW(stext) - getsystraywidth())
+-		else if (ev->x > selmon->ww - (int)TEXTW(stext))
++		else if (ev->x > selmon->ww - (int)TEXTW(stext) - getsystraywidth())
  			click = ClkStatusText;
  		else
  			click = ClkWinTitle;
@@ -735,6 +725,3 @@ index 9fd0286..ed42af7 100644
  void
  zoom(const Arg *arg)
  {
--- 
-2.27.0
-
