@@ -16,6 +16,7 @@ static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_white[]       = "#ffffff";
+static const char col_black[]       = "#000000";
 static const char col_green1[]      = "#344334";
 static const char col_green2[]      = "#272927";
 static const char col_cyan[]        = "#005577";
@@ -25,7 +26,7 @@ static const char *colors[][3]      =
     /*                   fg         bg         border   */
     [SchemeNorm]     = { col_white, col_gray1, col_gray1 },
     [SchemeSel]      = { col_white, col_green1, col_green1  },
-    [SchemeUrg]      = { col_white, col_accent, col_accent },
+    [SchemeUrg]      = { col_black, col_accent, col_accent },
     [SchemeStatus]   = { col_white, col_gray1, "#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
     [SchemeTagsSel]  = { col_white, col_green1, "#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
     [SchemeTagsNorm] = { col_white, col_gray1, "#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
