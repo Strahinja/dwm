@@ -23,7 +23,7 @@ fi
 
 emoji=$(dmenu -l $DMENU_LINES < $EMOJI_DATA_LOCAL_FILE | cut -f1 -d ' ')
 
-if [ -n $emoji ]; then
+if [ -n "$emoji" ]; then
     echo $emoji | xclip
     notify-send "$emoji copied to primary clipboard"
     echo $emoji | xclip -selection clipboard
