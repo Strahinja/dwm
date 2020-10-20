@@ -95,6 +95,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_white, "-sb", col_green1, "-sf", col_white, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *sdmenucmd[] = { "sh", "-c", "sdmenu.sh", NULL };
+static const char *slockcmd[] = { "slock", NULL };
 
 static Key keys[] =
 {
@@ -108,6 +109,8 @@ static Key keys[] =
     { MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
     { MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
     { MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+    { MODKEY,                       XK_semicolon,      
+                                               spawn,          {.v = slockcmd } },
     { MODKEY,                       XK_Return, zoom,           {0} },
     { MODKEY,                       XK_Tab,    view,           {0} },
     { MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
