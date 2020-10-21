@@ -42,6 +42,9 @@ install: all
 	chmod 755 ${DESTDIR}${PREFIX}/bin/dwm
 	cp -f sdmenu ${DESTDIR}${PREFIX}/bin
 	cp -f pickchar ${DESTDIR}${PREFIX}/bin
+	mkdir -p ${DESTDIR}${PREFIX}/share/dwm
+	cp -f shortcuts.md ${DESTDIR}${PREFIX}/share/dwm
+	chmod 644 ${DESTDIR}${PREFIX}/share/dwm/shortcuts.md
 	chmod 755 ${DESTDIR}${PREFIX}/bin/sdmenu
 	chmod 755 ${DESTDIR}${PREFIX}/bin/pickchar
 	mkdir -p ${DESTDIR}${MANPREFIX}/man1
@@ -52,6 +55,8 @@ uninstall:
 	rm -f ${DESTDIR}${PREFIX}/bin/dwm\
 		${DESTDIR}${MANPREFIX}/man1/dwm.1 \
 		${DESTDIR}${PREFIX}/bin/sdmenu \
-		${DESTDIR}${PREFIX}/bin/pickchar
+		${DESTDIR}${PREFIX}/bin/pickchar \
+		${DESTDIR}${PREFIX}/share/dwm/shortcuts.md \
+		${DESTDIR}${PREFIX}/share/dwm
 
 .PHONY: all options clean dist install uninstall

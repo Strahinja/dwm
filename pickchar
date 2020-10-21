@@ -9,7 +9,7 @@ if [ ! -f $EMOJI_DATA_LOCAL_FILE ]; then
     [ -f $UNICODE_DATA_LOCAL_FILE ] || \
         wget -c $UNICODE_DATA_URL -O $UNICODE_DATA_LOCAL_FILE
 
-    codes=$(grep -i ^1f[3-7][0-9a-f][0-9a-f] $UNICODE_DATA_LOCAL_FILE | \
+    codes=$(grep -i ^1f[3-9a-d][0-9a-f][0-9a-f] $UNICODE_DATA_LOCAL_FILE | \
         cut -d';' -f1)
     echo -n > $EMOJI_DATA_LOCAL_FILE
     for code in $codes; do

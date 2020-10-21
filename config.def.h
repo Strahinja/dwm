@@ -9,8 +9,10 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "PxPlus_IBM_VGA8 Nerd Font:size=12" };
-static const char dmenufont[]       = "PxPlus_IBM_VGA8 Nerd Font:size=12";
+static const char *fonts[]          = { "Cozette Vector:size=9" };
+//static const char *fonts[]          = { "PxPlus_IBM_VGA8 Nerd Font:size=12" };
+static const char dmenufont[]       = "Cozette Vector:size=9";
+//static const char dmenufont[]       = "PxPlus_IBM_VGA8 Nerd Font:size=12";
 static const char col_gray1[]       = "#121212";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -97,10 +99,12 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *sdmenucmd[] = { "sh", "-c", "sdmenu", NULL };
 static const char *pickcharcmd[] = { "sh", "-c", "pickchar", NULL };
 static const char *slockcmd[] = { "slock", NULL };
+static const char *helpcmd[] = { "st", "-e", "sh", "-c", "markdown < /usr/local/share/dwm/shortcuts.md | w3m -T text/html", NULL };
 
 static Key keys[] =
 {
     /* modifier                     key        function        argument */
+    { MODKEY,                       XK_F1,     spawn,          {.v = helpcmd } },
     { MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
     { MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
     { MODKEY,                       XK_b,      togglebar,      {0} },
