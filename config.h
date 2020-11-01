@@ -23,8 +23,7 @@ static const char col_green1[]      = "#344334";
 static const char col_green2[]      = "#272927";
 static const char col_cyan[]        = "#005577";
 static const char col_accent[]      = "#bdcc49";
-static const char *colors[][3]      =
-{
+static const char *colors[][3]      = {
     /*                   fg         bg         border   */
     [SchemeNorm]     = { col_white, col_gray1, col_gray1 },
     [SchemeSel]      = { col_white, col_green1, col_green1  },
@@ -36,8 +35,7 @@ static const char *colors[][3]      =
     [SchemeInfoNorm] = { col_white, col_gray1, "#000000"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
 };
 
-static const char *const autostart[] =
-{
+static const char *const autostart[] = {
     "st", NULL,
     "setxkbmap", "-layout", "us,rs", "-option", "grp:alt_shift_toggle", NULL,
     "picom", "--experimental-backends", NULL,
@@ -50,8 +48,7 @@ static const char *const autostart[] =
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
-static const Rule rules[] =
-{
+static const Rule rules[] = {
     /* xprop(1):
      *	WM_CLASS(STRING) = instance, class
      *	WM_NAME(STRING) = title
@@ -68,8 +65,7 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 static const int decorhints  = 1;    /* 1 means respect decoration hints */
 
 #include "layouts.c"
-static const Layout layouts[] =
-{
+static const Layout layouts[] = {
     /* symbol     arrange function */
     { "TTT",      bstack },
     { "[]=",      tile },    /* first entry is default */
@@ -101,8 +97,7 @@ static const char *pickcharcmd[] = { "sh", "-c", "pickchar", NULL };
 static const char *slockcmd[] = { "slock", NULL };
 static const char *helpcmd[] = { "st", "-e", "sh", "-c", "markdown < /usr/local/share/dwm/shortcuts.md | w3m -T text/html", NULL };
 
-static Key keys[] =
-{
+static Key keys[] = {
     /* modifier                     key        function        argument */
     { MODKEY,                       XK_F1,     spawn,          {.v = helpcmd } },
     { MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
@@ -153,8 +148,7 @@ static Key keys[] =
 
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
-static Button buttons[] =
-{
+static Button buttons[] = {
     /* click                event mask      button          function        argument */
     { ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
     { ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
