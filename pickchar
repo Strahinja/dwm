@@ -21,7 +21,7 @@ fi
 
 # 1f300 - 1f700
 
-emoji=$(dmenu -l $DMENU_LINES < $EMOJI_DATA_LOCAL_FILE | cut -f1 -d ' ')
+emoji=$(dmenu -p "Emoji:" -l $DMENU_LINES < $EMOJI_DATA_LOCAL_FILE | cut -f1 -d ' ')
 
 if [ -n "$emoji" ]; then
     xdotool type $emoji
