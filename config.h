@@ -94,10 +94,11 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_white, "-sb", col_green1, "-sf", col_white, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *sdmenucmd[] = { "sh", "-c", "sdmenu", NULL };
-static const char *pickcharcmd[] = { "sh", "-c", "pickchar", NULL };
+static const char *sdmenucmd[] = { "sdmenu", NULL };
+static const char *pickcharcmd[] = { "pickchar", NULL };
 static const char *slockcmd[] = { "slock", NULL };
 static const char *helpcmd[] = { "st", "-e", "sh", "-c", "markdown < /usr/local/share/dwm/shortcuts.md | w3m -T text/html", NULL };
+static const char *scrotcmd[] = { "screenshot", NULL };
 
 static Key keys[] = {
     /* modifier                     key        function        argument */
@@ -114,6 +115,7 @@ static Key keys[] = {
     { MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
     { MODKEY,                       XK_semicolon,      
                                                spawn,          {.v = slockcmd } },
+    { MODKEY,                       XK_Print,  spawn,          {.v = scrotcmd } },
     { MODKEY,                       XK_Return, zoom,           {0} },
     { MODKEY,                       XK_Tab,    view,           {0} },
     { MODKEY|ShiftMask,             XK_c,      killclient,     {0} },

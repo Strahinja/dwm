@@ -1,0 +1,5 @@
+#!/bin/bash
+
+SCREENSHOTDIR=~/Pictures/Screenshots
+[ -d $SCREENSHOTDIR ] || mkdir -p $SCREENSHOTDIR
+scrot $SCREENSHOTDIR/%Y-%m-%d-%H%M%S-dwm.png && notify-send "<b>scrot:</b> Screenshot taken"
