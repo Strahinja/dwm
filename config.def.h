@@ -94,8 +94,8 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_white, "-sb", col_green1, "-sf", col_white, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *sdmenucmd[] = { "sh", "-c", "sdmenu", NULL };
-static const char *pickcharcmd[] = { "sh", "-c", "pickchar", NULL };
+static const char *sdmenucmd[] = { "sdmenu", NULL };
+static const char *pickcharcmd[] = { "pickchar", NULL };
 static const char *slockcmd[] = { "slock", NULL };
 static const char *helpcmd[] = { "st", "-e", "sh", "-c", "markdown < /usr/local/share/dwm/shortcuts.md | w3m -T text/html", NULL };
 
