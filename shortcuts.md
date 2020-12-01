@@ -13,6 +13,7 @@
 | Mod+K           | Previous window                   |
 | Mod+G           | Open shutdown menu                |
 | Mod+P           | Open list of programs in a dmenu  |
+| Mod+Print       | Take a screenshot using scrot(1)  |
 | Mod+Shift+Enter | Open new terminal (st)            |
 | Mod+Shift+Space | Toggle floating                   |
 | Mod+Shift+C     | Kill window                       |
