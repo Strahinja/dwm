@@ -33,6 +33,7 @@
 #include <X11/cursorfont.h>
 #include <X11/keysym.h>
 #include <X11/Xatom.h>
+#include <X11/XF86keysym.h>
 #include <X11/Xlib.h>
 #include <X11/Xproto.h>
 #include <X11/Xutil.h>
@@ -58,6 +59,10 @@
 #define TEXTW(X)                (drw_fontset_getwidth(drw, (X)) + lrpad)
 
 #define SYSTEM_TRAY_REQUEST_DOCK    0
+
+/* X modifiers */
+#define XK_ANY_MOD    UINT_MAX
+#define XK_NO_MOD     0
 
 /* XEMBED messages */
 #define XEMBED_EMBEDDED_NOTIFY      0
