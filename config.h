@@ -100,6 +100,11 @@ static const char *termcmd[]         = { "st", "-e", "tmux", "-u", NULL };
 static const char *sdmenucmd[]       = { "sdmenu", NULL };
 static const char *pickcharcmd[]     = { "pickchar", NULL };
 static const char *slockcmd[]        = { "slock", NULL };
+static const char *surfcmd[]         = { "tsurf", NULL };
+static const char *fmcmd[]           = { "st", "-e", "ranger", NULL };
+static const char *mailcmd[]         = { "st", "-e", "neomutt", NULL };
+static const char *ctrlhcmd[]        = { "xdotool", "key", "ctrl+h", NULL };
+static const char *ctrllcmd[]        = { "xdotool", "key", "ctrl+l", NULL };
 static const char *helpcmd[]         = { "st", "-e", "sh", "-c", "markdown "
                                          "< /usr/local/share/dwm/shortcuts.md "
                                          "| w3m -T text/html", NULL };
@@ -156,6 +161,16 @@ static Key keys[] = {
     { MODKEY,                       XK_F10,    spawn,          {.v = mixermutecmd } },
     { 0,                            XF86XK_Calculator,
                                                spawn,          {.v = calccmd } },
+    { 0,                            XF86XK_HomePage,
+                                               spawn,          {.v = surfcmd } },
+    { 0,                            XF86XK_Explorer,
+                                               spawn,          {.v = fmcmd } },
+    { 0,                            XF86XK_Mail,
+                                               spawn,          {.v = mailcmd } },
+    { 0,                            XF86XK_Forward,
+                                               spawn,          {.v = ctrllcmd } },
+    { 0,                            XF86XK_Back,
+                                               spawn,          {.v = ctrlhcmd } },
     TAGKEYS(                        XK_1,                      0)
     TAGKEYS(                        XK_2,                      1)
     TAGKEYS(                        XK_3,                      2)
