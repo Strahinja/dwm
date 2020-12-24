@@ -103,8 +103,8 @@ static const char *slockcmd[]        = { "slock", NULL };
 static const char *surfcmd[]         = { "tsurf", NULL };
 static const char *fmcmd[]           = { "st", "-e", "ranger", NULL };
 static const char *mailcmd[]         = { "st", "-e", "neomutt", NULL };
-static const char *ctrlhcmd[]        = { "xkev", "-c", "-e", "h", NULL };
-static const char *ctrllcmd[]        = { "xkev", "-c", "-e", "l" NULL };
+static const char *ctrlhcmd[]        = { "xdotool", "keyup", "XF86Back", "key", "ctrl+h", NULL };
+static const char *ctrllcmd[]        = { "xdotool", "keyup", "XF86Forward", "key", "ctrl+l", NULL };
 static const char *helpcmd[]         = { "st", "-e", "sh", "-c", "markdown "
                                          "< /usr/local/share/dwm/shortcuts.md "
                                          "| w3m -T text/html", NULL };
